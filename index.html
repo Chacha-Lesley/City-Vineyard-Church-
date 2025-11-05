@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Vineyard Church - Welcome Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo" onclick="showPage('home')">
+                <i class="fas fa-church"></i> City Vineyard
+            </a>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('ministries')">Ministries</a></li>
+                <li><a href="#" onclick="showPage('sermons')">Sermons</a></li>
+                <li><a href="#" onclick="showPage('events')">Events</a></li>
+                <li><a href="#" onclick="showPage('give')">Give</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome Home</h1>
+                <p>Experience authentic community, grow in faith, and discover your purpose</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" onclick="showPage('visit')">
+                        <i class="fas fa-map-marker-alt"></i> Plan Your Visit
+                    </a>
+                    <a href="#" class="btn btn-secondary" onclick="openModal('watchLive')">
+                        <i class="fas fa-play-circle"></i> See What We Do
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Info -->
+        <section class="service-info">
+            <h3>Join Us Sundays</h3>
+            <div class="service-details">
+                <div>
+                    <i class="far fa-clock"></i>
+                    <span>11:00 AM</span>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Ngong Road Forest Sanctuary, Ngong Road</span>
+                </div>
+                <div>
+                    <i class="fas fa-laptop"></i>
+                    <span>Stream Online</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Sermon -->
+        <div class="container">
+            <section class="section">
+                <div class="featured-sermon">
+                    <div class="sermon-video" onclick="openModal('watchLive')">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="sermon-info">
+                        <h3>Worship Session</h3>
+                        <p class="meta">
+                            <i class="fas fa-user"></i> Worship Team
+                            <i class="far fa-calendar"></i> November 3, 2025
+                        </p>
+                        <p>Discover how to align your life with God's calling and make an eternal impact in your everyday moments.</p>
+                        <a href="#" onclick="showPage('sermons')" class="btn btn-primary" style="margin-top: 1rem;">
+                            <i class="fas fa-podcast"></i> More Sessions
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="section">
+                <h2 class="section-title">Get Connected</h2>
+                <p class="section-subtitle">There's a place for you here</p>
+                <div class="cards-grid">
+                    <div class="card" onclick="showPage('visit')">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-peace"></i>
+                        </div>
+                        <h3>Plan a Visit</h3>
+                        <p>New here? Learn what to expect and how to find us. We can't wait to meet you!</p>
+                        <a href="#"><i class="fas fa-arrow-right"></i> Learn More</a>
+                    </div>
+                    <div class="card" onclick="showPage('ministries')">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Join a Group</h3>
+                        <p>Connect with others through small groups, life stages, and shared interests.</p>
+                        <a href="#"><i class="fas fa-arrow-right"></i> Explore Groups</a>
+                    </div>
+                    <div class="card" onclick="showPage('give')">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Give</h3>
+                        <p>Make a difference by giving in our community and using your God-given gifts.</p>
+                        <a href="#"><i class="fas fa-arrow-right"></i> Get Involved</a>
+                    </div>
+                    <div class="card" onclick="showPage('events')">
+                        <div class="card-icon">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <h3>Upcoming Events</h3>
+                        <p>Join us for special gatherings, workshops, and community outreach opportunities.</p>
+                        <a href="#"><i class="fas fa-arrow-right"></i> View Calendar</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Impact Stats -->
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-user-friends"></i>
+                    <h2>20+</h2>
+                    <p>Active Members</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hands"></i>
+                    <h2>1</h2>
+                    <p>Ministry Teams</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-house-user"></i>
+                    <h2>5</h2>
+                    <p>Small Groups</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page-content">
+        <div class="hero" style="padding: 3rem 2rem;">
+            <h1>About City Vineyard</h1>
+            <p>Our Story, Beliefs, and Leadership</p>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="showPage('home')">Home</a> / About Us
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Our Story</h2>
+                <p style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8; color: var(--gray-medium);">
+                    City Vineyard Church began in 2010 with a vision to create a place where people could encounter God's presence, 
+                    experience genuine community, and discover their purpose. What started as a small gathering of families has grown 
+                    into a diverse, vibrant community committed to loving God, loving people, and making disciples.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Mission & Values</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Love God</h3>
+                        <p>We pursue authentic worship and cultivate intimacy with God through prayer, worship, and His Word.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Love People</h3>
+                        <p>We demonstrate Christ's love through authentic relationships, compassion, and radical generosity.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Make Disciples</h3>
+                        <p>We equip believers to grow spiritually and multiply disciples in their spheres of influence.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-dove"></i>
+                        </div>
+                        <h3>Welcome the Spirit</h3>
+                        <p>We create space for the Holy Spirit to move, heal, and empower in every gathering.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Reach Out</h3>
+                        <p>We engage our community and the world with the Gospel through service and missions.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-people-arrows"></i>
+                        </div>
+                        <h3>Build Community</h3>
+                        <p>We foster authentic relationships where people belong, grow, and serve together.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">What We Believe</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="list-item">
+                        <h3><i class="fas fa-book-bible"></i> The Bible</h3>
+                        <p>We believe the Bible is the inspired, authoritative Word of God and our guide for faith and life.</p>
+                    </div>
+                    <div class="list-item">
+                        <h3><i class="fas fa-infinity"></i> The Trinity</h3>
+                        <p>We believe in one God eternally existing in three persons: Father, Son, and Holy Spirit.</p>
+                    </div>
+                    <div class="list-item">
+                        <h3><i class="fas fa-cross"></i> Salvation</h3>
+                        <p>We believe salvation is by grace through faith in Jesus Christ alone.</p>
+                    </div>
+                    <div class="list-item">
+                        <h3><i class="fas fa-church"></i> The Church</h3>
+                        <p>We believe the church is the body of Christ, called to worship, grow, and serve together.</p>
+                    </div>
+                    <div class="list-item">
+                        <h3><i class="fas fa-crown"></i> The Kingdom</h3>
+                        <p>We believe in demonstrating God's kingdom through healing, justice, and transformation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Leadership Team</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Pastor John Smith</h3>
+                        <p><strong>Lead Pastor</strong></p>
+                        <p>John has served at City Vineyard since 2010, leading with vision, compassion, and a heart for discipleship.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Pastor Sarah Johnson</h3>
+                        <p><strong>Worship & Arts Pastor</strong></p>
+                        <p>Sarah oversees our worship ministry and creative arts, helping people encounter God's presence.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Pastor Mike Chen</h3>
+                        <p><strong>Youth & Young Adults Pastor</strong></p>
+                        <p>Mike is passionate about raising up the next generation of leaders for God's kingdom.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Emily Rodriguez</h3>
+                        <p><strong>Children's Ministry Director</strong></p>
+                        <p>Emily creates engaging, age-appropriate environments where kids can know and love Jesus.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Ministries Page -->
+    <div id="ministries" class="page-content">
+        <div class="hero" style="padding: 3rem 2rem;">
+            <h1>Ministries</h1>
+            <p>Find Your Place to Connect, Grow, and Serve</p>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="showPage('home')">Home</a> / Ministries
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-music"></i> Worship & Arts</h3>
+                <p class="meta"><i class="far fa-clock"></i> Sundays 8:30 AM (Rehearsal) <i class="far fa-envelope"></i> worship@cityvineyard.org</p>
+                <p>Join our creative team in leading worship through music, media, and arts. We welcome musicians, vocalists, tech crew, and visual artists.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-baby"></i> Children's Ministry (Birth - 5th Grade)</h3>
+                <p class="meta"><i class="far fa-clock"></i> Sundays 9:00 AM & 11:00 AM <i class="far fa-envelope"></i> kids@cityvineyard.org</p>
+                <p>Safe, fun, and age-appropriate environments where children learn about God's love through engaging lessons, worship, and activities.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-guitar"></i> Youth Ministry (6th - 12th Grade)</h3>
+                <p class="meta"><i class="far fa-clock"></i> Wednesdays 7:00 PM <i class="far fa-envelope"></i> youth@cityvineyard.org</p>
+                <p>A vibrant community for teens to grow in faith, build friendships, and discover their identity in Christ through weekly gatherings and events.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-home"></i> Small Groups</h3>
+                <p class="meta"><i class="far fa-clock"></i> Various Times & Locations <i class="far fa-envelope"></i> groups@cityvineyard.org</p>
+                <p>Connect deeply with others in homes throughout the city. Groups meet weekly for Bible study, prayer, and authentic community.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-globe-americas"></i> Missions & Outreach</h3>
+                <p class="meta"><i class="far fa-clock"></i> Monthly Service Projects <i class="far fa-envelope"></i> missions@cityvineyard.org</p>
+                <p>Partner with local and global initiatives to serve the vulnerable, share the Gospel, and make tangible impact in communities.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-heart"></i> Care & Counseling</h3>
+                <p class="meta"><i class="far fa-clock"></i> By Appointment <i class="far fa-envelope"></i> care@cityvineyard.org</p>
+                <p>Confidential pastoral care, prayer support, and Christian counseling resources for those navigating life's challenges.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-female"></i> Women's Ministry</h3>
+                <p class="meta"><i class="far fa-clock"></i> Monthly Gatherings <i class="far fa-envelope"></i> women@cityvineyard.org</p>
+                <p>Encouraging women to grow spiritually through Bible studies, retreats, mentoring, and fellowship events.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-male"></i> Men's Ministry</h3>
+                <p class="meta"><i class="far fa-clock"></i> Saturday Mornings <i class="far fa-envelope"></i> men@cityvineyard.org</p>
+                <p>Building strong, godly men through accountability, discipleship, and serving together in the community.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-hands-helping"></i> Volunteer Opportunities</h3>
+                <p class="meta"><i class="far fa-envelope"></i> serve@cityvineyard.org</p>
+                <p>Discover your gifts and serve in hospitality, tech, kids, youth, worship, missions, or administrative support.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sermons Page -->
+    <div id="sermons" class="page-content">
+        <div class="hero" style="padding: 3rem 2rem;">
+            <h1>Messages & Sermons</h1>
+            <p>Growing in Faith Through Biblical Teaching</p>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="showPage('home')">Home</a> / Sermons
+            </div>
+
+            <div class="featured-sermon" style="margin-bottom: 3rem;">
+                <div class="sermon-video" onclick="openModal('watchLive')">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="sermon-info">
+                    <h3>Latest Message: Living with Purpose</h3>
+                    <p class="meta">
+                        <i class="fas fa-user"></i> Pastor John Smith
+                        <i class="far fa-calendar"></i> November 3, 2025
+                    </p>
+                    <p>Discover how to align your life with God's calling and make an eternal impact in your everyday moments.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Recent Series</h2>
+
+            <div class="list-item">
+                <h3><i class="fas fa-praying-hands"></i> Faith in Action (Current Series)</h3>
+                <p class="meta"><i class="far fa-calendar"></i> 4-Part Series • October - November 2025</p>
+                <p>Exploring how genuine faith transforms our daily lives through practical obedience, service, and spiritual disciplines.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-hands"></i> The Heart of Worship</h3>
+                <p class="meta"><i class="far fa-calendar"></i> 5-Part Series • September 2025</p>
+                <p>Understanding true worship that goes beyond Sunday mornings to encompass every aspect of our lives.</p>
+            </div>
+            
+            <div class="list-item">
+                <h3><i class="fas fa-crown"></i> Kingdom Come</h3>
+                <p class="meta"><i class="far fa-calendar"></i> 6-Part Series • July - August 2025</p>
+                <p>Discovering what it means to live as kingdom citizens and advance God's reign on earth.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Events Page -->
+    <div id="events" class="page-content">
+        <div class="hero" style="padding: 3rem 2rem;">
+            <h1>Upcoming Events</h1>
+            <p>Gather, Grow, and Go Together</p>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="showPage('home')">Home</a> / Events
+            </div>
+
+            <div class="list-item">
+                <h3><i class="far fa-calendar-alt"></i> Thanksgiving Community Dinner</h3>
+                <p class="meta"><i class="far fa-calendar"></i> November 24, 2025 • 5:00 PM</p>
+                <p>Join us as we serve a warm meal and share gratitude with our neighbors in need. Volunteers welcome!</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-bible"></i> Advent Series: Hope Has Come</h3>
+                <p class="meta"><i class="far fa-calendar"></i> December 1–22, 2025</p>
+                <p>Prepare your heart this Christmas through our Advent teaching series and family devotionals.</p>
+            </div>
+
+            <div class="list-item">
+                <h3><i class="fas fa-tree"></i> Christmas Eve Service</h3>
+                <p class="meta"><i class="far fa-calendar"></i> December 24, 2025 • 6:00 PM</p>
+                <p>Celebrate the birth of Christ with candlelight worship, carols, and communion. All are welcome.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Give Page -->
+    <div id="give" class="page-content">
+        <div class="hero" style="padding: 3rem 2rem;">
+            <h1>Give</h1>
+            <p>Partner With Us in Advancing God’s Kingdom</p>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="showPage('home')">Home</a> / Give
+            </div>
+
+            <section class="section" style="text-align: center;">
+                <p style="max-width: 700px; margin: 0 auto;">
+                    Your generosity enables us to reach our city and the world with the love of Christ.  
+                    Every gift supports ministry, outreach, and care for those in need.
+                </p>
+                <a href="#" class="btn btn-primary" style="margin-top: 2rem;">
+                    <i class="fas fa-donate"></i> Give Online
+                </a>
+                <div style="margin-top: 2rem;">
+                    <p><strong>Other Ways to Give:</strong></p>
+                    <p>In-person during service • Mobile giving app • Bank transfer</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page-content">
+        <div class="hero" style="padding: 3rem 2rem;">
+            <h1>Contact Us</h1>
+            <p>We’d Love to Hear From You</p>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="showPage('home')">Home</a> / Contact
+            </div>
+
+            <section class="section">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3><i class="fas fa-map-marker-alt"></i> Visit Us</h3>
+                        <p>123 Vineyard Way, Your City</p>
+
+                        <h3><i class="fas fa-phone"></i> Call</h3>
+                        <p>(123) 456-7890</p>
+
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>info@cityvineyard.org</p>
+
+                        <h3><i class="fas fa-clock"></i> Office Hours</h3>
+                        <p>Mon - Fri: 9:00 AM - 4:00 PM</p>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Visit Page -->
+    <div id="visit" class="page-content">
+        <div class="hero" style="padding: 3rem 2rem;">
+            <h1>Plan Your Visit</h1>
+            <p>We Can’t Wait to Welcome You</p>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="showPage('home')">Home</a> / Plan Your Visit
+            </div>
+
+            <section class="section" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h3>Service Times</h3>
+                <p>Every Sunday • 9:00 AM & 11:00 AM</p>
+
+                <h3>Location</h3>
+                <p>123 Vineyard Way, Your City</p>
+
+                <h3>What to Expect</h3>
+                <p>Friendly people, uplifting worship, relevant teaching, and opportunities to connect.</p>
+
+                <a href="#" class="btn btn-primary" style="margin-top: 2rem;">
+                    <i class="fas fa-map"></i> Get Directions
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <!-- Watch Live Modal -->
+    <div id="watchLive" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('watchLive')">&times;</span>
+            <h2>Watch Live Service</h2>
+            <div class="video-container">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" 
+                        frameborder="0" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>City Vineyard Church</h3>
+                <p>123 Vineyard Way, Your City</p>
+                <p>info@cityvineyard.org</p>
+                <p>(123) 456-7890</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('about')">About</a></li>
+                    <li><a href="#" onclick="showPage('ministries')">Ministries</a></li>
+                    <li><a href="#" onclick="showPage('give')">Give</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2025 City Vineyard Church. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
