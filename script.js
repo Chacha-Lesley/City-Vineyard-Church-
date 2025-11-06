@@ -19,6 +19,32 @@ function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('active');
 }
 
+// Theme Toggle Function
+function toggleTheme() {
+    document.body.classList.toggle('purple-theme');
+    
+    // Save theme preference
+    const isPurpleTheme = document.body.classList.contains('purple-theme');
+    localStorage.setItem('theme', isPurpleTheme ? 'purple' : 'green');
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'purple') {
+        document.body.classList.add('purple-theme');
+    }
+    
+    // Initialize scroll animations
+    const cards = document.querySelectorAll('.card, .list-item');
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
+
 // Modal Functions
 function openModal(modalName) {
     document.getElementById(modalName + 'Modal').classList.add('active');

@@ -16,6 +16,11 @@
     --white: #FFFFFF;
 }
 
+body.purple-theme {
+    --primary-green: #703f8f;
+    --dark-green: #5a3272;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -318,12 +323,6 @@ nav {
     text-align: center;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    color: var(--primary-green);
-    margin-bottom: 1rem;
-    text-align: center;
-}
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
