@@ -20,30 +20,41 @@ function toggleMenu() {
 }
 
 // Theme Toggle Function
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+}
+
+// Theme Toggle Function for On/Off Switch
 function toggleTheme() {
-  const icon = document.querySelector('.theme-icon');
-  const body = document.body;
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
 
-  // Toggle class on icon
-  if (icon.classList.contains('green')) {
-    icon.classList.remove('green');
-    icon.classList.add('purple');
-    body.style.setProperty('--accent-color', '#9b59b6');
-  } else {
-    icon.classList.remove('purple');
-    icon.classList.add('green');
-    body.style.setProperty('--accent-color', '#2ecc71');
-  }
-
-  // Optional: toggle a theme class for broader styling
-  body.classList.toggle('purple-theme');
+    if (themeToggle.checked) {
+        // Purple theme
+        body.style.setProperty('--accent-color', '#9b59b6');
+        body.classList.add('purple-theme');
+        localStorage.setItem('theme', 'purple');
+    } else {
+        // Green theme
+        body.style.setProperty('--accent-color', '#2ecc71');
+        body.classList.remove('purple-theme');
+        localStorage.setItem('theme', 'green');
+    }
 }
 
 // Load saved theme on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme') || 'green';
+    const themeToggle = document.getElementById('themeToggle');
+
     if (savedTheme === 'purple') {
         document.body.classList.add('purple-theme');
+        themeToggle.checked = true;
+        document.body.style.setProperty('--accent-color', '#9b59b6');
+    } else {
+        document.body.classList.remove('purple-theme');
+        themeToggle.checked = false;
+        document.body.style.setProperty('--accent-color', '#2ecc71');
     }
     
     // Initialize scroll animations

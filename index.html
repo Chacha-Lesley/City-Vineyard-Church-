@@ -18,9 +18,12 @@
                 <li><a href="#" onclick="showPage('events')">Events</a></li>
                 <li><a href="#" onclick="showPage('give')">Give</a></li>
                 <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-                <li><button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
-                    <i class="fa-solid fa-circle theme-icon green"></i>
-                </button></li>
+                <li>
+                    <label class="theme-toggle-switch">
+                    <input type="checkbox" id="themeToggle" onclick="toggleTheme()">
+                    <span class="slider"></span>
+                </label>
+                </li>
             </ul>
         </nav>
     </header><!DOCTYPE html>
