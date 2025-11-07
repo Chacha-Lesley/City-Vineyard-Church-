@@ -21,11 +21,22 @@ function toggleMenu() {
 
 // Theme Toggle Function
 function toggleTheme() {
-    document.body.classList.toggle('purple-theme');
-    
-    // Save theme preference
-    const isPurpleTheme = document.body.classList.contains('purple-theme');
-    localStorage.setItem('theme', isPurpleTheme ? 'purple' : 'green');
+  const icon = document.querySelector('.theme-icon');
+  const body = document.body;
+
+  // Toggle class on icon
+  if (icon.classList.contains('green')) {
+    icon.classList.remove('green');
+    icon.classList.add('purple');
+    body.style.setProperty('--accent-color', '#9b59b6');
+  } else {
+    icon.classList.remove('purple');
+    icon.classList.add('green');
+    body.style.setProperty('--accent-color', '#2ecc71');
+  }
+
+  // Optional: toggle a theme class for broader styling
+  body.classList.toggle('purple-theme');
 }
 
 // Load saved theme on page load
