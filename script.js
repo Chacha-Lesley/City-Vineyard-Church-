@@ -1,18 +1,39 @@
+  // Map each page to its hero banner image
+const heroImages = {
+    home: 'images/church-community.jpg',
+    about: 'images/hero-about.jpg',
+    ministries: 'images/ministries.jpg',
+    sermons: 'images/hero-sermons.jpg',
+    events: 'images/hero-events.jpg',
+    give: 'images/hero-give.jpg',
+    contact: 'images/hero-contact.jpg'
+};
+
 // Navigation Functions
 function showPage(pageId) {
     // Hide all pages
     document.querySelectorAll('.page-content').forEach(page => {
         page.classList.remove('active');
     });
-    
+
     // Show selected page
-    document.getElementById(pageId).classList.add('active');
-    
+    const activePage = document.getElementById(pageId);
+    activePage.classList.add('active');
+
     // Scroll to top
-    window.scrollTo({top: 0, behavior: 'smooth'});
-    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     // Close mobile menu if open
     document.getElementById('navLinks').classList.remove('active');
+
+    // Update hero background of active page
+    const hero = activePage.querySelector('.hero');
+    if (heroImages[pageId] && hero) {
+        hero.style.backgroundImage = `
+            linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+            url('${heroImages[pageId]}')
+        `;
+    }
 }
 
 function toggleMenu() {

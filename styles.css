@@ -167,19 +167,30 @@ nav {
   transform: translateX(24px);  /* slides circle to right */
 }
 
-/* Hero Section */
+/* Hero section as full-width banner */
 .hero {
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+    position: relative;
     color: white;
-    padding: 6rem 2rem;
     text-align: center;
+    height: 500px; /* banner height */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('images/church-community.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically centers text */
+    align-items: center;
+    overflow: hidden;
+    transition: background-image 0.5s ease-in-out;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px;    /* constrains text */
+    margin: 0 auto;      /* centers content horizontally */
+    padding: 2rem;       /* optional spacing inside */
+    text-align: center;
 }
 
+/* Hero text */
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -301,15 +312,18 @@ nav {
 }
 
 .card {
-  position: relative;
-  background: white;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  border-top: 4px solid var(--accent-color, #2ecc71);
-  overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;                 /* clips image corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border-top: 4px solid var(--accent-color, #2ecc71);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 /* Animated outline layer */
@@ -343,6 +357,50 @@ nav {
 .card:hover::after {
   opacity: 1;
   animation: draw-border 1.6s ease forwards;
+}
+
+.card img {
+    width: 100%;                /* fill horizontal space */
+    height: 200px;              /* fixed top image height */
+    object-fit: cover;          /* fills area and crops excess */
+    display: block;
+    border-top-left-radius: 0;  /* radius handled by card overflow */
+    border-top-right-radius: 0; /* radius handled by card overflow */
+}
+
+/* Leader Cards Only */
+.leader-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;                  
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border-top: 4px solid var(--accent-color, #2ecc71);
+    display: flex;
+    flex-direction: column;
+    padding: 0;                        /* no padding on card itself */
+}
+
+.leader-card .leader-image {
+    width: 100%;
+    height: 220px;                      
+    overflow: hidden;
+}
+
+.leader-card .leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                  
+    display: block;
+}
+
+.leader-card .card-content {
+    padding: 1.5rem;                   /* text padding only */
+}
+
+.card-content {
+    padding: 1.5rem;           /* spacing for text at the bottom */
 }
 
 /* progressive sweep effect */
